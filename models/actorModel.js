@@ -1,7 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const actorSchema = new mongoose.Schema({
-  name: { unique: true, type: String, required: true },
+const actorSchema = new Schema({
+  name: { type: String, required: true },
+  gender: { type: String, required: true },
+  dob: { type: Date, required: true },
 });
 
 const Actor = mongoose.model("Actor", actorSchema);

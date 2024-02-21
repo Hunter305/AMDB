@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "cd AMDB_Frontend && npm run dev"
   },
   "keywords": [],
   "author": "",
