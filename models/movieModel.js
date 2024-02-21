@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const movieSchema = new Schema({
-  bioName: { type: String, required: true },
+  movieName: { type: String, required: true },
   yearOfRelease: { type: Number, required: true },
   plot: { type: String, required: true },
   posterName: { type: String, required: true },

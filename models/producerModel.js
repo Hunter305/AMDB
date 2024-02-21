@@ -1,8 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 
 const producerSchema = new Schema({
-  gender: { type: String, required: true },
-  dob: { type: Date, required: true },
+  name: { type: String, required: true },
+  country: { type: String, required: true },
+  dob: { type: String, required: true },
   bio: { type: String, required: true },
 });
 
