@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Movie = ({ movie }) => {
   return (
     <Card className="my-3 p-3 rounded">
-      <Link to={`/movie/${movie.id}`}>
+      <Link to={`/movie/${movie._id}`}>
         <Card.Img
           src={movie.poster}
           variant="top"
@@ -12,7 +12,7 @@ const Movie = ({ movie }) => {
       </Link>
 
       <Card.Body>
-        <Link to={`/movie/${movie.id}`}>
+        <Link to={`/movie/${movie._id}`}>
           <Card.Title
             as="div"
             className="movie-title"
@@ -22,7 +22,9 @@ const Movie = ({ movie }) => {
         </Link>
         <p>
           <strong>cast & crew : </strong>
-          {movie.actors.join(", ")}
+          {movie.actors.map(actor => (
+            <span key={actor._id}>{actor.name} </span>
+          ))}
         </p>
       </Card.Body>
     </Card>

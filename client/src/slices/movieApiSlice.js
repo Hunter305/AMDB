@@ -3,11 +3,11 @@ import { apiSlice } from "./apiSlice";
 export const movieApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getMovies: builder.query({
-      query: () => ({ url: "/Movies" }),
+      query: () => ({ url: "/movie" }),
       keepUnUsedDateFor: 5,
     }),
     getMovie: builder.query({
-      query: id => ({ url: `/Movies/${id}` }),
+      query: id => ({ url: `/movie/${id}` }),
     }),
   }),
 });

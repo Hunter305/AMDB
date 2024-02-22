@@ -5,6 +5,7 @@ import { Card, ListGroup, ListGroupItem, Row, Col } from "react-bootstrap";
 const MoviePage = () => {
   const { movieId } = useParams();
   const { data: movie, isLoading, error } = useGetMovieQuery(movieId);
+  console.log(movie);
   return (
     <div>
       {isLoading ? (
@@ -19,12 +20,9 @@ const MoviePage = () => {
           >
             <Card>
               <Row noGutters={true}>
-                <Col
-                  md={4}
-                  m-2
-                >
+                <Col md={4}>
                   <Card.Img
-                    src={movie.poster}
+                    src={movie.posterName}
                     alt="Movie Poster"
                     style={{ margin: "10px" }}
                   />
@@ -39,15 +37,21 @@ const MoviePage = () => {
                       <strong>Year of Release:</strong> {movie.yearOfRelease}
                     </ListGroup.Item>
                     <ListGroup.Item>
-                      <strong>Producer:</strong> {movie.producer}
+                      <strong>Producer:</strong> {movie.producer.name}
                     </ListGroup.Item>
                     <ListGroup.Item>
                       <strong>Actors:</strong>
-                      <ul>
-                        {movie.actors.map((actor, index) => (
-                          <li key={index}>{actor}</li>
-                        ))}
-                      </ul>
+
+                      {movie.actors.map((actor, index) => (
+                        <div key={index}>
+                          <Link
+                            to={`/actor/${actor._id}`}
+                            key={index}
+                          >
+                            {actor.name}
+                          </Link>
+                        </div>
+                      ))}
                     </ListGroup.Item>
                   </ListGroup>
                 </Col>

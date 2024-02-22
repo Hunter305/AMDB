@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 
 import db from "./config/db.js";
@@ -13,6 +14,7 @@ const app = express();
 const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("app is running");

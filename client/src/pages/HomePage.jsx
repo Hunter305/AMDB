@@ -10,7 +10,7 @@ const HomePage = () => {
       <Row>
         {data?.map(movie => (
           <Col
-            key={movie.id}
+            key={movie._id}
             sm={12}
             md={6}
             lg={4}
