@@ -6,7 +6,7 @@ const Movie = ({ movie }) => {
     <Card className="my-3 p-3 rounded">
       <Link to={`/movie/${movie._id}`}>
         <Card.Img
-          src={movie.poster}
+          src={movie.posterName}
           variant="top"
         />
       </Link>
