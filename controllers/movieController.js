@@ -43,4 +43,13 @@ const deleteMovie = async (req, res) => {
   }
 };
 
-export { createMovie, findMovies, updateMovie, deleteMovie };
+const findMovie = async (req, res) => {
+  try {
+    const movie = await Movie.findById(req.params.id).populate("actors producer");
+    res.json(movie);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
+export { createMovie, findMovies, updateMovie, deleteMovie, findMovie };
