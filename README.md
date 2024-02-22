@@ -62,3 +62,90 @@ const movieSchema = new Schema({
 
 const Movie = mongoose.model("Movie", movieSchema);
 ```
+
+# API Routes
+
+The AMDB project provides a RESTful API with routes to manage actors, producers, and movies. Below are the routes available for each entity:
+
+## Actor Routes
+
+- **Get All Actors**
+
+  - Method: `GET`
+  - Endpoint: `/api/actor/`
+
+- **Add New Actor**
+
+  - Method: `POST`
+  - Endpoint: `/api/actor/`
+
+- **Update an Actor**
+
+  - Method: `PATCH`
+  - Endpoint: `/api/actor/:id`
+
+- **Get a Specific Actor**
+
+  - Method: `GET`
+  - Endpoint: `/api/actor/:id`
+
+- **Delete an Actor**
+
+  - Method: `DELETE`
+  - Endpoint: `/api/actor/:id`
+
+- **Get Actor with Acted Movies**
+  - Method: `GET`
+  - Endpoint: `/api/actor/movies/:id`
+
+## Producer Routes
+
+- **Get All Producers**
+
+  - Method: `GET`
+  - Endpoint: `/api/producer/`
+
+- **Add New Producer**
+
+  - Method: `POST`
+  - Endpoint: `/api/producer/`
+
+- **Update a Producer**
+
+  - Method: `PATCH`
+  - Endpoint: `/api/producer/:id`
+
+- **Get a Specific Producer**
+
+  - Method: `GET`
+  - Endpoint: `/api/producer/:id`
+
+- **Delete a Producer**
+  - Method: `DELETE`
+  - Endpoint: `/api/producer/:id`
+
+## Movie Routes
+
+- **Get All Movies**
+
+  - Method: `GET`
+  - Endpoint: `/api/movie/`
+
+- **Add New Movie**
+
+  - Method: `POST`
+  - Endpoint: `/api/movie/`
+
+- **Update a Movie**
+
+  - Method: `PATCH`
+  - Endpoint: `/api/movie/:id`
+
+- **Get a Specific Movie**
+
+  - Method: `GET`
+  - Endpoint: `/api/movie/:id`
+
+- **Delete a Movie**
+  - Method: `DELETE`
+  - Endpoint: `/api/movie/:id`
