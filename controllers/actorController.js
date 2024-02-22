@@ -1,4 +1,5 @@
 import Actor from "../models/actorModel.js";
+import Movie from "../models/movieModel.js";
 
 const createActor = async (req, res) => {
   try {
@@ -45,4 +46,18 @@ const deleteActor = async (req, res) => {
   }
 };
 
-export { createActor, findActors, updateActor, deleteActor, findActor };
+const findMoviesOfActor = async (req, res) => {
+  try {
+    const actorId = req.params.id;
+    const actor = await Actor.findById(actorId);
+    if (!actor) {
+      return res.status(404).json({ error: "Actor not found" });
+    }
+    const movies = await Movie.find({ actors: actorId }).populate("actors producer");
+    res.status(200).json({ actor, movies });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export { createActor, findActors, updateActor, deleteActor, findActor, findMoviesOfActor };

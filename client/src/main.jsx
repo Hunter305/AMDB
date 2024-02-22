@@ -11,6 +11,7 @@ import {
 import App from "./App";
 import store from "./store";
 import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter(
         index={true}
         path="/"
         element={<HomePage />}
+      />
+      <Route
+        path="/movie/:movieId"
+        element={<MoviePage />}
       />
     </Route>
   )

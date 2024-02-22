@@ -20,6 +20,10 @@ const Movie = ({ movie }) => {
             <strong>{movie.movieName}</strong>
           </Card.Title>
         </Link>
+        <p>
+          <strong>cast & crew : </strong>
+          {movie.actors.join(", ")}
+        </p>
       </Card.Body>
     </Card>
   );
