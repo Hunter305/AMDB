@@ -8,6 +8,7 @@ import store from "./store";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import ActorPage from "./pages/ActorPage";
+import { MoviesList } from "./components/MovieList";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter(
         path="/actor/:actorId"
         element={<ActorPage />}
       />
+      {/* <Route
+        path="/movie/editmovie"
+        element={<MoviesList />}
+      /> */}
     </Route>
   )
 );
