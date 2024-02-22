@@ -5,7 +5,6 @@ import { Card, ListGroup, ListGroupItem, Row, Col } from "react-bootstrap";
 const MoviePage = () => {
   const { movieId } = useParams();
   const { data: movie, isLoading, error } = useGetMovieQuery(movieId);
-  console.log(movie);
   return (
     <div>
       {isLoading ? (

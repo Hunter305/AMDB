@@ -23,7 +23,7 @@ const Movie = ({ movie }) => {
         <p>
           <strong>cast & crew : </strong>
           {movie.actors.map(actor => (
-            <span key={actor._id}>{actor.name} </span>
+            <span key={actor._id}>{actor.name}, </span>
           ))}
         </p>
       </Card.Body>
