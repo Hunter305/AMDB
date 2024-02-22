@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const baseQuery = fetchBaseQuery({ baseUrl: "http://localhost:3000/api" });
+const baseQuery = fetchBaseQuery({ baseUrl: "https://amdb.onrender.com/api" });
 
 export const apiSlice = createApi({
   baseQuery,
