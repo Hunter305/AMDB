@@ -7,19 +7,23 @@ const HomePage = () => {
 
   return (
     <>
-      <Row>
-        {data?.map(movie => (
-          <Col
-            key={movie._id}
-            sm={12}
-            md={6}
-            lg={4}
-            xl={3}
-          >
-            <Movie movie={movie} />
-          </Col>
-        ))}
-      </Row>
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <Row>
+          {data?.map(movie => (
+            <Col
+              key={movie._id}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={3}
+            >
+              <Movie movie={movie} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </>
   );
 };
